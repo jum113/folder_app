@@ -8,10 +8,10 @@
     <div class="memo-folder pt-4 ms-2">
 
       <div class="folder-name">
-      
+
         <% @folders.each do |folder| %>
           
-            <%= link_to folder.folder_name, "#", class: "text-decoration-none" %>
+            <%= link_to folder.folder_name, "#", class: "d-block pb-3 text-decoration-none" %>
           
         <% end %>
 
