@@ -8,15 +8,14 @@
     <div class="memo-folder pt-4 ms-2">
 
       <div class="folder-name">
-        <%= link_to "メモフォルダー", "#", class: "text-decoration-none" %>
+      
+        <% @folders.each do |folder| %>
+          
+            <%= link_to folder.folder_name, "#", class: "text-decoration-none" %>
+          
+        <% end %>
+
       </div>
-      <div class="folder-name">
-        <%= link_to "メモフォルダー", "#", class: "text-decoration-none" %>
-      </div>
-      <div class="folder-name">
-        <%= link_to "メモフォルダー", "#", class: "text-decoration-none" %>
-      </div>
-    
     </div>
 
   </div>
@@ -38,8 +37,8 @@
           <%= form_with model: @folder, id: "folder-form" do |f| %>
             <div class="modal-body">
               <div class="form-group">
-                <%= f.label :folder, "フォルダー名" %>
-                <%= f.text_field :folder, class: "form-control", id: "folder" %>
+                <%= f.label :folder_name, "フォルダー名" %>
+                <%= f.text_field :folder_name, class: "form-control", id: "folder" %>
               </div>
             </div>
             <div class="modal-footer">
