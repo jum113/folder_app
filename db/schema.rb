@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_085634) do
+ActiveRecord::Schema.define(version: 2022_01_26_124135) do
 
   create_table "folders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "folder_name", null: false
@@ -18,4 +18,14 @@ ActiveRecord::Schema.define(version: 2022_01_26_085634) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "folder_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["folder_id"], name: "index_memos_on_folder_id"
+  end
+
+  add_foreign_key "memos", "folders"
 end
