@@ -1,8 +1,8 @@
 class MemosController < ApplicationController
   def index
     @memo = Memo.new
-    @memos = Memo.order("created_at DESC")
     @folder = Folder.find(params[:folder_id])
+    @memos = @folder.memos.order("created_at DESC")
     @folders = Folder.order("created_at ASC")
   end
 
@@ -14,6 +14,13 @@ class MemosController < ApplicationController
     else
       render :index
     end
+  end
+
+  def destroy
+    @folder = Folder.find(params[:folder_id])
+    memo = @folder.memos.find(params[:id])
+    memo.destroy
+    redirect_to action: :index
   end
 
   private

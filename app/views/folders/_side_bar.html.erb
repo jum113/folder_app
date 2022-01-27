@@ -1,8 +1,7 @@
 <div class="sidebar bg-light col-2">
 
   <div class="sidebar-header shadow d-flex align-items-center">
-    <i class="bi bi-journal-text mx-2" style="font-size:24px"></i>
-    <%= link_to "MemoApp", root_path, class: "app-title text-decoration-none" %>
+    <i class="bi bi-journal-text mx-2" style="font-size:24px">MemoApp</i>
   </div>
   <div class="memos-folder overflow-scroll">
 
@@ -22,7 +21,7 @@
     </div>
 
   </div>
-  <div class="folder-form" style= "visibility: hidden;">
+  <div class="folder-form">
     <%= form_with model: @folder, id: "folder-form" do |f| %>
       <%= f.label :folder_name, "フォルダー名" %>
       <%= f.text_field :folder_name, class: "form-control", id: "folder" %>
