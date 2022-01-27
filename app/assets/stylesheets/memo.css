@@ -7,11 +7,20 @@
     height: 50px;
   }
 
+  .app-title {
+    font-style: italic;
+    font-size: 24px;
+  }
+
   .memo-folder {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
   }
   .folder-name {
     font-size: large;
+  }
+
+  .folder-form {
+    height: 100px;
   }
 
   .sidebar-footer {

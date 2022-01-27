@@ -8,6 +8,8 @@ class FoldersController < ApplicationController
     @folder =Folder.new(folder_params)
     if @folder.save
       redirect_to root_path
+    else
+      render :index
     end
   end
 

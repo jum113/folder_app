@@ -1,0 +1,7 @@
+<%= form_with model: @folder, id: "folder-form" do |f| %>
+  <div class="form-group">
+    <%= f.label :folder_name, "フォルダー名" %>
+    <%= f.text_field :folder_name, class: "form-control", id: "folder" %>
+    <%= f.submit "作成する", class: "btn btn-primary", id: "folder-submit" %>
+  </div>
+<% end %>
